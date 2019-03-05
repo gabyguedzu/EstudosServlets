@@ -1,8 +1,3 @@
-<%
-String nomeEmpresa = (String)request.getAttribute("empresa");
-
-%>
-
 <html>
-	<h3> Cadastrando nova empresa <%=nomeEmpresa%> </h3>
+	<h3> Cadastrando nova empresa ${empresa}</h3>
 </html>
