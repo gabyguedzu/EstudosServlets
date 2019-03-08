@@ -5,6 +5,10 @@
 
 <html>
 	<body>
+	<c:if test="${not empty empresa }">
+		<h3> Cadastrando nova empresa ${empresa}</h3>
+	</c:if>
+	
 	Lista de empresas: <br />
 	<ul>
 		<c:forEach items="${empresas}" var="empresa">		
