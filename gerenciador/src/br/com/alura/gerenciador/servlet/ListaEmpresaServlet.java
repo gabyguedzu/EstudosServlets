@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class ListaEmpresaServlet
  */
-@WebServlet("/listaEmpresa")
+@WebServlet("/listaEmpresas")
 public class ListaEmpresaServlet extends HttpServlet {
 	
 	private static final long serialVersionUID = 1L;
