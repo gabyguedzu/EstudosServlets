@@ -1,6 +1,7 @@
 package br.com.alura.gerenciador.servlet;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 public class Banco {
@@ -26,12 +27,26 @@ public class Banco {
 	}
 
 	public void removeEmpresa(Integer id) {
-		for (Empresa empresa : lista) {
-			if (empresa.getId() == id) {
-				lista.remove(empresa);
+		Iterator<Empresa> it = lista.iterator();
+		
+		while(it.hasNext()) {
+			Empresa emp = it.next();
+			
+			if (emp.getId() == id) {
+				lista.remove(emp);
 			}
 		}
 		
+	}
+
+	public Empresa buscaEmpresaPeloId(Integer id) {
+		for(Empresa empresa : lista) {
+			if(empresa.getId() == id) {
+				return empresa;
+			}		
+		}
+		
+		return null;
 	}
 
 }
