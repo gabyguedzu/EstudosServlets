@@ -1,13 +1,16 @@
 package br.com.alura.gerenciador.servlet;
 
 import java.io.IOException;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/unicaEntrada")
+import br.com.alura.gerenciador.acao.ListaEmpresas;
+
+@WebServlet("/entrada")
 public class UnicaEntradaServlet extends HttpServlet {
 	
 	private static final long serialVersionUID = 1L;
@@ -16,7 +19,8 @@ public class UnicaEntradaServlet extends HttpServlet {
 		String paramAcao = request.getParameter("acao");
 		
 		if(paramAcao.equals("ListaEmpresas")) {
-			System.out.println("listando empresas");
+			ListaEmpresas acao = new ListaEmpresas();
+			acao.executa(request, response);
 		}
 	}
 
