@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import br.com.alura.gerenciador.acao.Acao;
 import br.com.alura.gerenciador.acao.AlteraEmpresa;
 import br.com.alura.gerenciador.acao.ListaEmpresas;
 import br.com.alura.gerenciador.acao.MostraEmpresa;
@@ -25,6 +26,11 @@ public class UnicaEntradaServlet extends HttpServlet {
 		
 		String paramAcao = request.getParameter("acao");
 		String nome = null;
+		String nomeClasse = "import br.com.alura.gerenciador.acao" + paramAcao;
+		Class classe = Class.forName(nomeClasse);
+		Object obj = classe.newInstance();
+		Acao acao = (Acao) obj;
+		String nome = acao.executa(request, response);
 		
 		if(paramAcao.equals("ListaEmpresas")) {
 			ListaEmpresas acao = new ListaEmpresas();
