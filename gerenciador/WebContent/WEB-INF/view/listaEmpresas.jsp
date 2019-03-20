@@ -5,6 +5,9 @@
 
 <html>
 	<body>
+	Usuario logado: ${usuarioLogado.login}
+	<br>
+	
 	<c:if test="${not empty empresa }">
 		<h3> Cadastrando nova empresa ${empresa}</h3>
 	</c:if>
