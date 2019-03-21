@@ -5,6 +5,9 @@
 
 <html>
 	<body>
+	
+	<c:import url="logout-parcil.jsp"/>
+	
 	Usuario logado: ${usuarioLogado.login}
 	<br>
 	
